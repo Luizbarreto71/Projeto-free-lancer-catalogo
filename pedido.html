@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo do Pedido</title>
+    <link rel="stylesheet"
+    href="pedido.css">
+    <link 
+    href="<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">"
+   
+</head>
+<body> 
+  
+  <h2>Resumo do Pedido</h2>  
+  <div>
+    <p>Produto: <span id="products">        
+    </span></p>
+    <p>Preço:R$ <span id="Preço"></span></p>
+  </div>
+  <h3>Faça o pagamento via PIX</h3>
+  <img 
+  src="WhatsApp-Image-2024-09-26-at-01.13.42.png" alt="QR Code PIX para pagamento" style="width: 200px;">
+  
+  <h3>Enviar comprovante</h3>
+  <input type="file" id="comprovante" accept="image/*">
+
+  <button 
+  id="enviarPedidoBtn"
+  class="btn">Enviar Pedido no WhatsApp</button>   
+  <script>
+    document.getElementById("enviarPedidoBtn").addEventListener("click",function(){
+      let numeroPedido = 
+      Math.floor(Math.random()*1000000);
+      let produto=
+      document.getElementById('products').innerText;
+      let preco =
+      document.getElementById('Preço').innerText;
+      let numeroVendedor =
+      '5579988619119';
+
+      let mensagem =
+      'óla,gostaria de realizar o pedido /nProduto:${produto}/nPreço:${preco}/Número do Pedido:${numeroPedido}';
+       
+      let urlWhatsApp = 
+      'https://wa.me/${5579988619119}?text=${encodeURIComponent(mensagem)}';
+
+
+window.open(urlWhatsApp,'_blank');
+});
+ 
+  </script>
+
+</body>
+</html>
