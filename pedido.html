@@ -16,9 +16,18 @@
   
   <h2>Resumo do Pedido</h2>  
   <div>
-    <p>Produto: <span id="products">        
+    <p>Produto: <span id="produto">        
     </span></p>
-    <p>Preço:R$ <span id="Preço"></span></p>
+    <p>Preço:R$ <span id="preco"></span></p>
+    <script>
+      // Recuperar os dados do localStorage
+      var produto = localStorage.getItem('produto');
+      var preco = localStorage.getItem('preco');
+
+      // Exibir os dados no HTML
+      document.getElementById('produto').innerText =  produto;
+      document.getElementById('preco').innerText = "R$ " + preco; 
+  </script>
   </div>
   <h3>Faça o pagamento via PIX</h3>
   <img 
@@ -52,6 +61,6 @@ window.open(urlWhatsApp,'_blank');
 });
  
   </script>
-
+  
 </body>
 </html>
